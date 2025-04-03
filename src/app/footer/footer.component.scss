@@ -1,0 +1,52 @@
+.welder-website-main-footer-container {
+  background-color: #001f3f;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 150px;
+  margin-left: 5%;
+  padding: 20px;
+}
+.footer-box {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.footer-box h2 {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.footer-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-box ul li {
+  list-style: none;
+}
+
+.footer-box ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer-box ul li a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 735px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+}

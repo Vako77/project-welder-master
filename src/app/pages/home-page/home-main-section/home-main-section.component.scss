@@ -1,0 +1,71 @@
+.main-section-title {
+  background: url("https://wallpaperaccess.com/full/5380139.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* ფონის ფიქსირება პარალაქის ეფექტისთვის */
+  width: 100%;
+  min-height: 100vh; /* სექციის მინიმალური სიმაღლე მთლიან ეკრანს მოერგოს */
+  display: flex;
+  align-items: center; /* კონტენტის ვერტიკალურად ცენტრში გასწორება */
+  justify-content: center; /* ჰორიზონტალურად ცენტრში გასწორება */
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+}
+
+
+
+/* ჩაბნელება ზემ overlay-ს დამატება */
+.main-section-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* კონტეინერი, რომელიც გთავაზობთ ორ калонას */
+.main-section-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.main-section-first-card {
+  animation: fadeInUp 1s ease-out;
+  text-align: start;
+  position: relative;
+}
+
+/* ძირითადი სტილები */
+.main-section-first-card h1 {
+  font-size: 12vw;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+/* ანიმაციის გასამართავი საკვანძო კლავი */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-section-title {
+    // background-attachment: scroll; /* მობილურზე პარალაქი გათიშე */
+    min-height: 70vh; /* მცირე ეკრანებზე 80% სიმაღლე */
+  }
+}

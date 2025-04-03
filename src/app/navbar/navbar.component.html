@@ -1,0 +1,14 @@
+<nav class="navbar" [class.open]="menuOpen">
+    <ul class="navbar-links">
+        <li><a routerLink="/">მთავარი</a></li>
+        <li><a routerLink="/about">ჩვენ შესახებ</a></li>
+        <li><a routerLink="/projects">პროექტები</a></li>
+        <li><a routerLink="/contact">კონტაქტი</a></li>
+    </ul>
+</nav>
+
+<div class="navbar-toggle" [class.open]="menuOpen" (click)="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
