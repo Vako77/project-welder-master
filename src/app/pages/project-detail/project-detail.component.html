@@ -1,0 +1,22 @@
+<div class="project-detail-container">
+    <div class="main-images-container">
+        <!-- მთავარი სურათი მარცხნივ -->
+        <div class="active-image">
+            <img [src]="activeImage" alt="Active Image" class="active-image-main">
+        </div>
+
+        <!-- სურათების გალერეა მარჯვნივ -->
+        <div class="image-gallery">
+            <div class="images">
+                <img *ngFor="let image of projectDetails.images" [src]="image" alt="{{ projectDetails.companyName }}"
+                    (click)="setActiveImage(image)" class="image-thumb" />
+            </div>
+        </div>
+    </div>
+
+    <!-- პროექტის დეტალები -->
+    <div class="project-details">
+        <h3>Project Details</h3>
+        <p>{{ projectDetails.description }}</p>
+    </div>
+</div>

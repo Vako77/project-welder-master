@@ -1,0 +1,102 @@
+.main-form-container {
+  min-height: 100vh; /* მინიმუმ 100vh, მაგრამ საჭიროებისამებრ გაიზრდება */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box; /* Padding არ გადააჭარბებს მთლიან სიმაღლეს */
+}
+
+/* Form container */
+.form-container {
+  display: flex;
+  max-width: 1100px;
+  width: 100%;
+  min-height: 80vh; /* მინიმუმ 100vh, მაგრამ საჭიროებისამებრ გაიზრდება */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Left side image */
+.form-container-image {
+  width: 50%;
+}
+
+.form-container-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right side form */
+.form-container-inputs {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form-container-inputs h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #001f3f;
+}
+
+.form-container-inputs input,
+.form-container-inputs textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #001f3f;
+  border-radius: 5px;
+  font-size: 1em;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-container-inputs textarea {
+  resize: vertical;
+  height: 50px;
+}
+
+.form-container-inputs button {
+  width: 40%;
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  background: #0055a4;
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-container-inputs button:hover {
+  background: #003f7d;
+}
+
+/* Responsive Design */
+@media (max-width: 868px) {
+  .form-container {
+    flex-direction: column;
+  }
+
+  .form-container-image {
+    width: 100%;
+  }
+
+  .form-container-inputs input,
+  .form-container-inputs textarea {
+    width: 90%;
+  }
+
+  .form-container-inputs {
+    width: 100%;
+    padding: 20px;
+  }
+}

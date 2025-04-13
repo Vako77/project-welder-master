@@ -1,0 +1,137 @@
+/* Base styles for the navbar */
+.navbar {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 14px 0;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-left: 4%;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  position: relative;
+  padding: 8px 15px;
+  transition: 300ms ease;
+  border-radius: 4px;
+}
+
+.navbar-links a:hover {
+  color: #ffffff;
+  background-color: #001f3f;
+  transform: translateY(-3px);
+}
+
+/* Burger button styles */
+.navbar-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 200;
+  padding: 12px;
+  border-radius: 50%;
+  display: none;
+  background-color: #001f3f;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: 5px 0;
+  background: #ffffff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 5px;
+}
+
+/* Hover effect for burger */
+.navbar-toggle:hover .bar {
+  background-color: #ffffff;
+  transform: scaleX(1.2);
+}
+
+/* Media query for small screens (mobile) */
+@media (max-width: 768px) {
+
+  /* Navbar styles for mobile */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #001f3f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* When navbar is open, it will slide in */
+  .navbar.open {
+    transform: translateX(0);
+  }
+
+  /* Links */
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .navbar-links a {
+    font-size: 28px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Hover effect for links */
+  .navbar-links a:hover {
+    color: #001f3f;
+    background-color: #fff;
+    transform: translateY(-5px);
+    padding: 20px;
+  }
+
+  /* Show the navbar toggle when screen width is small */
+  .navbar-toggle {
+    display: block;
+  }
+
+  /* Styling for the bars when the menu is open */
+  .navbar.open .navbar-toggle .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .navbar.open .navbar-toggle .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar.open .navbar-toggle .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}

@@ -1,0 +1,84 @@
+.project-detail-container {
+    padding: 40px;
+    font-family: 'Noto Sans', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-detail-container h1 {
+    font-size: 2.5em;
+    color: #001F3F;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.main-images-container {
+    display: flex;
+    justify-content: space-between;
+    /* ალიგნირება მარცხენა და მარჯვენა ნაწილში */
+    gap: 20px;
+    /* გასწორების დაშორება */
+}
+
+/* მთავარი სურათი */
+.active-image {
+    flex: 1;
+    /* სურათის კონტეინერი */
+    margin-bottom: 30px;
+}
+
+.active-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* სურათების გალერეა მარჯვენა მხარეს */
+.image-gallery {
+    width: 150px;
+    /* უფრო მცირე სიგანე, ვიდრე ძირითადი სურათი */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-gallery .images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-gallery .images img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-gallery .images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* პროექტის დეტალები */
+.project-details {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.project-details h3 {
+    font-size: 1.6em;
+    color: #001F3F;
+    margin-bottom: 15px;
+}
+
+.project-details p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
