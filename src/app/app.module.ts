@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { NgModule } from '@angular/core'; // Angular-ის მოდულის დეკორატორი
 import { BrowserModule } from '@angular/platform-browser'; // ბრაუზერზე გასაშვებად საჭირო მოდული
 

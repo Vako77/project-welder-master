@@ -10,11 +10,7 @@
   },
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "@angular/animations": "^17.3.12",
-=======
     "@angular/animations": "^17.3.0",
->>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
     "@angular/common": "^17.3.0",
     "@angular/compiler": "^17.3.0",
     "@angular/core": "^17.3.0",
