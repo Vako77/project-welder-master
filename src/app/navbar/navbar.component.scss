@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 /* Base styles for the navbar */
+=======
+/* ნავბარის ძირითადი სტილები */
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
 .navbar {
   background-color: #ffffff;
   width: 100%;
   padding: 14px 0;
+<<<<<<< HEAD
   position: relative;
   z-index: 100;
   display: flex;
@@ -10,6 +15,11 @@
   align-items: center;
 }
 
+=======
+}
+
+/* ნავბარის ლინკები */
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
 .navbar-links {
   list-style: none;
   display: flex;
@@ -21,32 +31,52 @@
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
+<<<<<<< HEAD
   color: #333;
   position: relative;
   padding: 8px 15px;
   transition: 300ms ease;
   border-radius: 4px;
+=======
+  position: relative;
+  color: #001f3f;
+  transition: 300ms;
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
 }
 
 .navbar-links a:hover {
   color: #ffffff;
   background-color: #001f3f;
+<<<<<<< HEAD
   transform: translateY(-3px);
 }
 
 /* Burger button styles */
+=======
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* ნავბარის toggle ღილაკი */
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
 .navbar-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
   cursor: pointer;
   z-index: 200;
+<<<<<<< HEAD
   padding: 12px;
   border-radius: 50%;
   display: none;
   background-color: #001f3f;
   transition: transform 0.3s ease;
   z-index: 1000;
+=======
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
 }
 
 .bar {
@@ -54,6 +84,7 @@
   width: 30px;
   height: 4px;
   margin: 5px 0;
+<<<<<<< HEAD
   background: #ffffff;
   transition: transform 0.3s ease, opacity 0.3s ease;
   border-radius: 5px;
@@ -69,12 +100,21 @@
 @media (max-width: 768px) {
 
   /* Navbar styles for mobile */
+=======
+  background: #FFFFFF;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  /* ნავბარი სრულ ეკრანზე გამოდის */
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
   .navbar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100%;
+<<<<<<< HEAD
     background-color: #001f3f;
     display: flex;
     flex-direction: column;
@@ -87,10 +127,24 @@
   }
 
   /* When navbar is open, it will slide in */
+=======
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ცენტრში გასწორება ვერტიკალურად */
+    justify-content: center; /* ცენტრში გასწორება ჰორიზონტალურად */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+  }
+
+  /* როცა ნავბარს დაემატება "open", გამოჩნდება */
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
   .navbar.open {
     transform: translateX(0);
   }
 
+<<<<<<< HEAD
   /* Links */
   .navbar-links {
     display: flex;
@@ -135,3 +189,57 @@
     transform: rotate(-45deg) translate(6px, -6px);
   }
 }
+=======
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ტექსტის ცენტრში გასწორება */
+    text-align: center; /* ტექსტის ჰორიზონტალურად გასწორება */
+    gap: 40px;
+  }
+
+  .navbar-links a {
+    font-size: 35px;
+  }
+
+  /* როცა ნავბარს დაემატება "open", გამოჩნდება */
+  .navbar.open {
+    transform: translateX(0);
+  }
+
+  /* ნავბარი იმალება, მაგრამ toggle რჩება */
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar.open .navbar-links {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* toggle ღილაკი ყოველთვის უნდა ჩანდეს */
+  .navbar-toggle {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 300;
+    background-color: #001f3f;
+  }
+}
+
+/* ანიმაციის ახალი ვერსია */
+.navbar-toggle.open .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.navbar-toggle.open .bar:nth-child(2) {
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.navbar-toggle.open .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3

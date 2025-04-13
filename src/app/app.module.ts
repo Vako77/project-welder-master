@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { NgModule } from '@angular/core'; // Angular-ის მოდულის დეკორატორი
 import { BrowserModule } from '@angular/platform-browser'; // ბრაუზერზე გასაშვებად საჭირო მოდული
 
@@ -23,6 +24,30 @@ import { ProjectDetailComponent } from './pages/project-detail/project-detail.co
 @NgModule({
   declarations: [
     // აქ ჩამოთვლილია ყველა კომპონენტი, რომელიც ამ მოდულში გამოიყენება
+=======
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CardSectionComponent } from './pages/home-page/card-section/card-section.component';
+import { MainContactNavigationComponent } from './main-contact-navigation/main-contact-navigation.component';
+import { FooterComponent } from './footer/footer.component';
+
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HomeMainSectionComponent } from './pages/home-page/home-main-section/home-main-section.component';
+import { HomeInformationSectionComponent } from './pages/home-page/home-information-section/home-information-section.component';
+import { HomeInformationSecondSectionComponent } from './pages/home-page/home-information-second-section/home-information-second-section.component';
+
+import { AboutComponent } from './pages/about/about.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
     AppComponent,
     NavbarComponent,
     CardSectionComponent,
@@ -35,6 +60,7 @@ import { ProjectDetailComponent } from './pages/project-detail/project-detail.co
     AboutComponent,
     ProjectsComponent,
     ContactComponent,
+<<<<<<< HEAD
     BigProjectsComponent,
     ProjectDetailComponent,
   ],
@@ -43,3 +69,11 @@ import { ProjectDetailComponent } from './pages/project-detail/project-detail.co
   bootstrap: [AppComponent], // საწყისი კომპონენტი, რომლითაც აპლიკაცია იწყებს მუშაობას
 })
 export class AppModule {}
+=======
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3

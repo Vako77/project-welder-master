@@ -1,11 +1,16 @@
+<<<<<<< HEAD
 // საჭირო Angular-ს ბიბლიოთეკების იმპორტი
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 // AnimationService - შენი სერვისი ანიმაციებისთვის
+=======
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
 import { AnimationService } from '../../../services/animation.service';
 
 @Component({
   selector: 'app-home-information-second-section',
+<<<<<<< HEAD
   // ამ კომპონენტის გამოყენება HTML-ში ხდება ასე: 
   // <app-home-information-second-section></app-home-information-second-section>
 
@@ -39,3 +44,22 @@ export class HomeInformationSecondSectionComponent implements OnInit, AfterViewI
     this.animationService.initScrollAnimations(Array.from(elements));
   }
 }
+=======
+  templateUrl: './home-information-second-section.component.html',
+  styleUrls: ['./home-information-second-section.component.scss']
+})
+export class HomeInformationSecondSectionComponent implements OnInit, AfterViewInit {
+
+  constructor(private animationService: AnimationService) {}
+
+  ngOnInit(): void {
+    // Initial setup (if needed)
+  }
+
+  ngAfterViewInit(): void {
+    // Ensure elements are ready in the DOM
+    const elements = document.querySelectorAll('.main-home-information-second-section-container-box, .main-home-information-second-section-text, .main-home-information-second-section-image') as NodeListOf<HTMLElement>;
+    this.animationService.initScrollAnimations(Array.from(elements));
+  }
+}
+>>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
