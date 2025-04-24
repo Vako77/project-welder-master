@@ -1,0 +1,60 @@
+<div class="project-gallery">
+  <div class="project-section" *ngFor="let project of projects; let i = index">
+    <h3 class="project-title">{{ project.name }}</h3>
+
+    <div class="card-slider-container">
+      <button class="scroll-btn left" (click)="scrollLeft(i)">←</button>
+
+      <div class="card-slider" #slider>
+        <div
+          class="card"
+          *ngFor="let image of project.images; let imgIndex = index"
+          (click)="openModal(project, imgIndex)"
+        >
+          <div class="card-image-wrapper">
+            <img [src]="image" alt="Project image" />
+          </div>
+        </div>
+      </div>
+
+      <button class="scroll-btn right" (click)="scrollRight(i)">→</button>
+    </div>
+  </div>
+
+  <div class="modal" *ngIf="showModal" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="closeModal()">×</button>
+
+      <div class="modal-image-container">
+        <button class="modal-nav-btn prev" (click)="navigateImage('prev')">←</button>
+
+        <div class="modal-image-wrapper">
+          <img
+            *ngIf="activeProject"
+            [src]="activeProject.images[activeImageIndex]"
+            class="modal-image"
+            alt="Project image"
+          />
+        </div>
+
+        <button class="modal-nav-btn next" (click)="navigateImage('next')">→</button>
+      </div>
+
+      <div class="image-counter" *ngIf="activeProject">
+        {{ activeImageIndex + 1 }} / {{ activeProject.images.length }}
+      </div>
+
+      <div class="thumbnails-container" *ngIf="activeProject">
+        <div
+          *ngFor="let image of activeProject.images; let i = index"
+          class="thumbnail"
+          [class.active]="i === activeImageIndex"
+          (click)="activeImageIndex = i"
+          #thumb
+        >
+          <img [src]="image" alt="Thumbnail" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

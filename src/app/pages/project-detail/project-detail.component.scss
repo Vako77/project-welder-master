@@ -1,84 +1,255 @@
 .project-detail-container {
-    padding: 40px;
-    font-family: 'Noto Sans', sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.project-detail-container h1 {
-    font-size: 2.5em;
-    color: #001F3F;
-    font-weight: 700;
-    margin-bottom: 20px;
+  padding: 40px;
+  font-family: "Noto Sans", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px; /* ✅ დაამატე ეს ხაზიც */
 }
 
 .main-images-container {
-    display: flex;
-    justify-content: space-between;
-    /* ალიგნირება მარცხენა და მარჯვენა ნაწილში */
-    gap: 20px;
-    /* გასწორების დაშორება */
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-/* მთავარი სურათი */
 .active-image {
-    flex: 1;
-    /* სურათის კონტეინერი */
-    margin-bottom: 30px;
+  flex: 1;
+  margin-bottom: 30px;
 }
 
 .active-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* სურათების გალერეა მარჯვენა მხარეს */
+.active-image img:hover {
+  transform: scale(1.02);
+}
+
 .image-gallery {
-    width: 150px;
-    /* უფრო მცირე სიგანე, ვიდრე ძირითადი სურათი */
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .image-gallery .images {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .image-gallery .images img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-gallery .images img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* პროექტის დეტალები */
 .project-details {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .project-details h3 {
-    font-size: 1.6em;
-    color: #001F3F;
-    margin-bottom: 15px;
+  font-size: 1.6em;
+  color: #001f3f;
+  margin-bottom: 15px;
 }
 
 .project-details p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 1300px) {
+  .main-images-container {
+    flex-direction: column;
+  }
+
+  .active-image {
+    width: 80%;
+  }
+
+  .active-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .image-gallery {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 0 15px 0;
+  }
+
+  .image-gallery .images {
+    flex-direction: row;
+    gap: 10px;
+    display: flex;
+    width: max-content;
+  }
+
+  .image-gallery .images img {
+    width: 100px;
+    flex-shrink: 0;
+  }
+
+  .project-details {
+    padding: 15px;
+  }
+
+  .project-details h3 {
+    font-size: 1.4em;
+  }
+
+  .project-details p {
+    font-size: 1em;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 768px) {
+  .active-image {
+    width: 90%;
+  }
+
+  .image-gallery .images img {
+    width: 90px;
+  }
+
+  .project-details h3 {
+    font-size: 1.3em;
+  }
+
+  .project-details p {
+    font-size: 0.95em;
+  }
+
+  .close {
+    font-size: 2em;
+    top: 15px;
+    right: 20px;
+  }
+
+  .prev,
+  .next {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .active-image {
+    width: 95%;
+  }
+
+  .image-gallery .images img {
+    width: 80px;
+  }
+
+  .project-details {
+    padding: 10px;
+  }
+
+  .project-details h3 {
+    font-size: 1.2em;
+  }
+
+  .project-details p {
+    font-size: 0.9em;
+  }
+}
+
+/* --- Modal Styles --- */
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  object-fit: contain;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5em;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #ddd;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  font-size: 2.5em;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+  user-select: none;
+  transition: color 0.3s ease;
+  z-index: 10000;
+}
+
+.prev:hover,
+.next:hover {
+  color: #ddd;
+}
+
+.prev {
+  left: 30px;
+}
+
+.next {
+  right: 30px;
 }

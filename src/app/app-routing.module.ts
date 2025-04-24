@@ -4,30 +4,23 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ContactComponent } from './pages/contact/contact.component';
-<<<<<<< HEAD
 import { ProjectDetailComponent } from './pages/project-detail/project-detail.component';
+import { BigProjectsComponent } from './pages/projects/big-projects/big-projects.component';
+import { ProjectCardComponent } from './pages/projects/project-card/project-card.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },  // მთავარი გვერდი
-  { path: 'about', component: AboutComponent },
-  { path: 'projects', component: ProjectsComponent },  // პროექტების გვერდი
-  { path: 'contact', component: ContactComponent },
-  { path: 'project/:id', component: ProjectDetailComponent }  // პროექტის დეტალების გვერდი
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // მთავარი გვერდი
+  { path: 'home', component: HomePageComponent }, // მთავარი გვერდი
+  { path: 'about', component: AboutComponent }, // "ჩვენს შესახებ" გვერდი
+  { path: 'projects', component: ProjectsComponent }, // პროექტების გვერდი
+  { path: 'projects/big-projects', component: BigProjectsComponent }, // კომპანიის პროექტების გვერდი
+  { path: 'projects/project-card', component: ProjectCardComponent }, // ინდივიდუალური ნამუშევრების გვერდი
+  { path: 'contact', component: ContactComponent }, // კონტაქტის გვერდი
+  { path: 'project/:id', component: ProjectDetailComponent }, // პროექტის დეტალების გვერდი
 ];
 
-=======
-
-const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'contact', component: ContactComponent },
-];
-
-
->>>>>>> 492d8396115050279475f0fcf43fc2adc3fdabf3
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)], // RouterModule კონფიგურაციის დაწყება
+  exports: [RouterModule], // RouterModule-ის ექსპორტი, რომ სხვადასხვა კომპონენტებში გამოვიყენოთ
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

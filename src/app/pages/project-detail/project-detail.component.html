@@ -1,22 +1,44 @@
 <div class="project-detail-container">
-    <div class="main-images-container">
-        <!-- მთავარი სურათი მარცხნივ -->
-        <div class="active-image">
-            <img [src]="activeImage" alt="Active Image" class="active-image-main">
-        </div>
-
-        <!-- სურათების გალერეა მარჯვნივ -->
-        <div class="image-gallery">
-            <div class="images">
-                <img *ngFor="let image of projectDetails.images" [src]="image" alt="{{ projectDetails.companyName }}"
-                    (click)="setActiveImage(image)" class="image-thumb" />
-            </div>
-        </div>
+  <!-- Main Image Section -->
+  <div class="main-images-container">
+    <!-- Active Image -->
+    <div class="active-image" (click)="setActiveImage(activeImage)">
+      <img 
+        [src]="activeImage" 
+        alt="Active Image" 
+        class="active-image-main" 
+      />
     </div>
 
-    <!-- პროექტის დეტალები -->
-    <div class="project-details">
-        <h3>Project Details</h3>
-        <p>{{ projectDetails.description }}</p>
+    <!-- Thumbnail Gallery -->
+    <div class="image-gallery">
+      <div class="images">
+        <img
+          *ngFor="let image of projectDetails.images"
+          [src]="image"
+          alt="{{ projectDetails.companyName }}"
+          (click)="setActiveImage(image)"
+          class="image-thumb"
+        />
+      </div>
     </div>
+  </div>
+
+  <!-- Project Description Section -->
+  <div class="project-details">
+    <h3>Project Details</h3>
+    <p>{{ projectDetails.description }}</p>
+  </div>
+</div>
+
+<!-- Fullscreen Modal Carousel -->
+<div class="modal" *ngIf="isModalOpen">
+  <span class="close" (click)="closeModal()">×</span>
+  <img 
+    [src]="activeImage" 
+    class="modal-content" 
+  />
+
+  <button class="prev" (click)="prevImage()">&#10094;</button>
+  <button class="next" (click)="nextImage()">&#10095;</button>
 </div>

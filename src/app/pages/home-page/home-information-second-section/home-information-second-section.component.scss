@@ -1,10 +1,11 @@
 .main-home-information-second-section-container {
-    height: auto;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 0 5%;
+    padding: 60px 5%; /* ზევით/ქვემოთ padding-ით გავზარდოთ სიმაღლე */
+    position: relative;
 }
 
 .main-home-information-second-section-container-box {
@@ -28,10 +29,23 @@
 }
 
 .main-home-information-second-section-text h1 {
-    font-size: 7vw;
+    font-size: 6vw;
     color: #001F3F;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    position: relative;
 }
+
+.main-home-information-second-section-text h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background-color: #001F3F;
+    border-radius: 2px;
+}
+
 
 .main-home-information-second-section-text p {
     font-size: 1.2rem;
@@ -44,6 +58,7 @@
     align-items: center;
     transform: translateX(-50px);
     opacity: 0;
+    max-width: 1000px;
     transition: all 1s ease-in-out 0.5s;
 }
 
@@ -75,5 +90,20 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-home-information-second-section-container {
+        padding: 40px 5%;
+        min-height: auto;
+    }
+
+    .main-home-information-second-section-text h1 {
+        font-size: 8vw;
+    }
+
+    .main-home-information-second-section-text p {
+        font-size: 1rem;
     }
 }

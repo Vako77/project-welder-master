@@ -1,10 +1,11 @@
 .main-home-information-section-container {
-  height: auto;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 0 5%;
+  padding: 60px 5%;
+  position: relative;
 }
 
 .main-home-information-section-container-box {
@@ -27,9 +28,21 @@
 }
 
 .main-home-information-section-text h1 {
-  font-size: 7vw;
+  font-size: 6vw;
   color: #001f3f;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.main-home-information-section-text h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 4px;
+  background-color: #001f3f;
+  border-radius: 2px;
 }
 
 .main-home-information-section-text p {
@@ -43,6 +56,7 @@
   align-items: center;
   transform: translateX(50px);
   opacity: 0;
+  max-width: 1000px;
   transition: all 1s ease-in-out 0.5s;
 }
 
@@ -50,6 +64,7 @@
   width: 100%;
   border-radius: 15px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
 }
 
 /* --- Animations on Scroll --- */
@@ -73,5 +88,20 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-home-information-section-container {
+    padding: 40px 5%;
+    min-height: auto;
+  }
+
+  .main-home-information-section-text h1 {
+    font-size: 8vw;
+  }
+
+  .main-home-information-section-text p {
+    font-size: 1rem;
   }
 }

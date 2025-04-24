@@ -1,18 +1,27 @@
 <div class="main-form-container">
   <div class="form-container">
-    <div class="form-container-image">
-      <img
-        src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2VsZGluZ3xlbnwwfHwwfHx8MA%3D%3D"
-        alt=""
-      />
+    <!-- მარცხენა მხარეს — Google Map -->
+    <div class="form-container-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1525.5160395781345!2d44.99862433919977!3d41.68414559707449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404410500d5e8515%3A0x8eaa54f406f5d6e9!2z4YOt4YOY4YOg4YOc4YOQ4YOu4YOj4YOa4YOY4YOhIOGDpeGDo-GDqeGDkCwg4YOX4YOR4YOY4YOa4YOY4YOh4YOY!5e0!3m2!1ska!2sge!4v1745492292167!5m2!1ska!2sge"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
+
+    <!-- მარჯვენა მხარეს — კონტაქტის ფორმა -->
     <div class="form-container-inputs">
       <h1>Contact Us</h1>
-      <input type="text" placeholder="Name" />
-      <input type="text" placeholder="Last Name" />
-      <input type="email" placeholder="Email" />
-      <textarea name="" id="" placeholder="Message"></textarea>
-      <button>Send Message</button>
+      <input type="text" [(ngModel)]="firstName" placeholder="Name" />
+      <input type="text" [(ngModel)]="lastName" placeholder="Last Name" />
+      <input type="email" [(ngModel)]="email" placeholder="Email" />
+      <textarea [(ngModel)]="message" placeholder="Message"></textarea>
+      <button (click)="submitForm()">Send Message</button>
+      
     </div>
   </div>
 </div>

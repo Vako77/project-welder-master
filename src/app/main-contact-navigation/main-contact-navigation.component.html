@@ -1,15 +1,91 @@
-<div class="main-contact-navigation-box">
+<!-- Main Contact & Navigation Section -->
+<div class="main-contact-navigation-main-container-box">
+  <!-- Top Contact Bar -->
+  <div class="main-contact-navigation-box">
     <div class="main-contact-navigation-box-container">
-        <div class="main-contact-navigation-box-logo">
-            <h1 class="welder-logo">Welder</h1>
+      <!-- Logo -->
+      <div class="main-contact-navigation-box-logo">
+        <h1 routerLink="/home" class="welder-logo">
+          {{ "title" | translate }}
+        </h1>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="main-contact-navigation-box-contacts">
+        <div class="contact-box">
+          <p>
+            <i class="bi bi-telephone-fill"></i>
+            Number:<br />+995-592-052-052
+          </p>
         </div>
-        <div class="main-contact-navigation-box-contacts">
-            <div class="contact-box">
-                <p> <i class="bi bi-telephone-fill"></i> Number:<br>+995-000-000-000</p>
-            </div>
-            <div class="contact-box">
-                <p> <i class="bi bi-envelope-fill"></i> Mail:<br>danielbiblaia232#Gmail.com</p>
-            </div>
+        <div class="contact-box">
+          <p>
+            <i class="bi bi-envelope-fill"></i>
+            Email:<br />info.weldergroup&#64;gmail.com
+          </p>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
+<!-- Navigation Bar Section -->
+<div class="navbar-main-container">
+  <!-- Overlay for mobile -->
+  <div class="overlay" [class.show]="menuOpen" (click)="closeMenu()"></div>
+
+  <!-- Main Navigation -->
+  <nav class="navbar" [class.open]="menuOpen">
+    <ul class="navbar-links">
+      <li>
+        <a routerLink="/" (click)="closeMenu()">{{ "home" | translate }}</a>
+      </li>
+      <li>
+        <a routerLink="/about" (click)="closeMenu()">{{ "about" | translate }}</a>
+      </li>
+
+      <!-- Dropdown Menu -->
+      <li class="dropdown">
+        <a class="dropdown-toggle" (click)="toggleDropdown($event)">{{ "projects" | translate }}</a>
+        <ul class="dropdown-menu" [class.show]="showDropdown">
+          <li>
+            <a routerLink="/projects/big-projects" (click)="closeMenu()">
+              {{ "company_projects" | translate }}
+            </a>
+          </li>
+          <li>
+            <a routerLink="/projects/project-card" (click)="closeMenu()">
+              {{ "individual_projects" | translate }}
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a routerLink="/contact" (click)="closeMenu()">
+          {{ "contact" | translate }}
+        </a>
+      </li>
+    </ul>
+
+    <!-- Language switcher and social icon -->
+    <div class="navbar-extras">
+      <div class="language-cycle" (click)="cycleLanguage()">
+        <img [src]="currentFlag" [alt]="currentLang + ' flag'" />
+        <span>{{ currentLang.toUpperCase() }}</span>
+      </div>
+
+      <!-- Facebook Icon -->
+      <a href="https://www.facebook.com/profile.php?id=61575412313131" target="_blank" aria-label="Facebook" class="social-icon">
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+    </div>
+  </nav>
+</div>
+
+<!-- Hamburger Toggle Button -->
+<button class="navbar-toggle" [class.open]="menuOpen" (click)="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</button>

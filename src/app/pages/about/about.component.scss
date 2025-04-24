@@ -1,0 +1,81 @@
+/* Welder Group Styles */
+
+$primary-color: #001f3f; /* მუქი ლურჯი */
+$secondary-color: #ffffff; /* თეთრი */
+$highlight-color: #000000; /* შავი */
+$transition-speed: 0.3s;
+
+.welder-group-about-main-container {
+  min-height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.welder-group-container {
+  background-color: $secondary-color;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.2s ease-out;
+}
+
+.welder-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header-title {
+  font-size: 3rem;
+  font-weight: 600;
+  color: $primary-color;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-out;
+}
+
+.header-subtitle {
+  font-size: 1.5rem;
+  color: $highlight-color;
+  font-weight: 500;
+  letter-spacing: 1px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.content {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-out;
+  border-bottom: 1px solid #333;
+  padding: 20px 0px;
+  transition: $transition-speed;
+  &:hover {
+    border-bottom: 1px solid $primary-color;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
