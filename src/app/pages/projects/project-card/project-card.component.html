@@ -1,59 +1,29 @@
-<div class="project-gallery">
-  <div class="project-section" *ngFor="let project of projects; let i = index">
-    <h3 class="project-title">{{ project.name }}</h3>
-
-    <div class="card-slider-container">
-      <button class="scroll-btn left" (click)="scrollLeft(i)">←</button>
-
-      <div class="card-slider" #slider>
-        <div
-          class="card"
-          *ngFor="let image of project.images; let imgIndex = index"
-          (click)="openModal(project, imgIndex)"
-        >
-          <div class="card-image-wrapper">
-            <img [src]="image" alt="Project image" />
-          </div>
-        </div>
-      </div>
-
-      <button class="scroll-btn right" (click)="scrollRight(i)">→</button>
+<div class="gallery-container">
+  <!-- პროექტების ჩვენება -->
+  <div class="projects-grid">
+    <div *ngFor="let project of displayedProjects" class="project-card" (click)="openModal(project)">
+      <img [src]="project.images[0]" [alt]="project.name + ' image'" class="thumbnail">
+      <h3>{{ project.name }}</h3>
+      <p>{{ project.description }}</p>
     </div>
   </div>
 
-  <div class="modal" *ngIf="showModal" (click)="closeModal()">
+  <!-- პაგინაცია -->
+  <div class="pagination">
+    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">წინა</button>
+    <span>გვერდი {{ currentPage }} / {{ totalPages }}</span>
+    <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">შემდეგი</button>
+  </div>
+
+  <!-- მოდალი (სურათების ნახვა) -->
+  <div *ngIf="selectedProject" class="modal-overlay" (click)="closeModal()">
     <div class="modal-content" (click)="$event.stopPropagation()">
-      <button class="close-btn" (click)="closeModal()">×</button>
-
-      <div class="modal-image-container">
-        <button class="modal-nav-btn prev" (click)="navigateImage('prev')">←</button>
-
-        <div class="modal-image-wrapper">
-          <img
-            *ngIf="activeProject"
-            [src]="activeProject.images[activeImageIndex]"
-            class="modal-image"
-            alt="Project image"
-          />
-        </div>
-
-        <button class="modal-nav-btn next" (click)="navigateImage('next')">→</button>
-      </div>
-
-      <div class="image-counter" *ngIf="activeProject">
-        {{ activeImageIndex + 1 }} / {{ activeProject.images.length }}
-      </div>
-
-      <div class="thumbnails-container" *ngIf="activeProject">
-        <div
-          *ngFor="let image of activeProject.images; let i = index"
-          class="thumbnail"
-          [class.active]="i === activeImageIndex"
-          (click)="activeImageIndex = i"
-          #thumb
-        >
-          <img [src]="image" alt="Thumbnail" />
-        </div>
+      <button class="close-btn" (click)="closeModal()">&times;</button>
+      <img [src]="selectedProject.images[currentImageIndex]" [alt]="selectedProject.name + ' image'">
+      <div class="modal-controls">
+        <button (click)="prevImage()" [disabled]="currentImageIndex === 0">წინა სურათი</button>
+        <span>{{ currentImageIndex + 1 }} / {{ selectedProject.images.length }}</span>
+        <button (click)="nextImage()" [disabled]="currentImageIndex === selectedProject.images.length - 1">შემდეგი სურათი</button>
       </div>
     </div>
   </div>

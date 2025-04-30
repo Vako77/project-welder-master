@@ -220,10 +220,19 @@
   cursor: pointer;
   z-index: 10000;
   transition: color 0.3s ease;
+  padding: 10px;
+  border-radius: 12px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .close:hover {
   color: #ddd;
+  background-color: #001f3f;
+  
 }
 
 .prev,
@@ -244,6 +253,7 @@
 .prev:hover,
 .next:hover {
   color: #ddd;
+  background-color: #001f3f;
 }
 
 .prev {

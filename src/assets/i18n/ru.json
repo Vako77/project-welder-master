@@ -6,5 +6,61 @@
   "company_projects": "Корпоративные проекты",
   "individual_projects": "Индивидуальные проекты",
   "contact": "Контакты",
-  "select_language": "Выбрать язык"
+  "select_language": "Выбрать язык",
+  "big_projects": {
+    "heading": "Проекты, реализованные с компаниями"
+  },
+  "project_detail": {
+    "heading": "Детали проекта",
+    "description": "Проект 'In Office' был реализован на улице Мераба Костава..."
+  },
+  "skills": {
+    "equipment": {
+      "title": "Оборудование",
+      "description": "Мы используем инструменты профессионального уровня",
+      "icon": "fas fa-tools"
+    },
+    "clean_welding": {
+      "title": "Чистая сварка",
+      "description": "Наши специалисты обеспечивают точную и чистую сварку",
+      "icon": "fas fa-wrench"
+    },
+    "safety": {
+      "title": "Безопасность",
+      "description": "Процесс сварки проводится с максимальными мерами безопасности, мы используем защитные аксессуары.",
+      "icon": "fas fa-hard-hat"
+    }
+  },
+  "home_info": {
+    "title": "Welder",
+    "description": "Компания с 11-летним опытом в реализации профессиональных проектов по сварке металла.",
+    "button": "Проекты"
+  },
+  "home_info_second_section": {
+    "title": "Проекты",
+    "description": "Компания Welder берет на себя ответственность за проекты любого масштаба"
+  },
+  "footer": {
+    "pages": "Страницы",
+    "home": "Главная",
+    "about": "О нас",
+    "projects": "Проекты",
+    "contact": "Контакты",
+    "phone": "Номер",
+    "email": "Почта"
+  },
+  "aboutPage": {
+    "header": {
+      "title": "Welder Group",
+      "subtitle": "Прочное соединение, постоянная надежность!"
+    }
+  },
+  "contactPage": {
+    "title": "Связаться с нами",
+    "name": "Имя",
+    "lastName": "Фамилия",
+    "email": "Электронная почта",
+    "message": "Сообщение",
+    "submit": "Отправить сообщение"
+  }
 }

@@ -11,7 +11,7 @@
 .main-home-information-section-container-box {
   display: flex;
   align-items: center;
-  gap: 20%;
+  gap: 10%;
   padding: 40px 0;
   transform: translateY(50px);
   opacity: 0;
@@ -28,7 +28,7 @@
 }
 
 .main-home-information-section-text h1 {
-  font-size: 6vw;
+  font-size: 6rem;
   color: #001f3f;
   margin-bottom: 25px;
   position: relative;

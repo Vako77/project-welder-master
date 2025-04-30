@@ -1,11 +1,66 @@
 {
+  "title": "Welder",
+  "home": "Home",
+  "about": "About Us",
+  "projects": "Projects",
+  "company_projects": "Company Projects",
+  "individual_projects": "Individual Projects",
+  "contact": "Contact",
+  "select_language": "Select Language",
+  "big_projects": {
+    "heading": "Projects implemented with companies"
+  },
+  "project_detail": {
+    "heading": "Project Details",
+    "description": "The 'In Office' project was implemented on Merab Kostava Street..."
+  },
+  "skills": {
+    "equipment": {
+      "title": "Equipment",
+      "description": "We use professional-grade tools",
+      "icon": "fas fa-tools"
+    },
+    "clean_welding": {
+      "title": "Clean Welding",
+      "description": "Our specialists ensure detailed and clean welding",
+      "icon": "fas fa-wrench"
+    },
+    "safety": {
+      "title": "Safety",
+      "description": "The welding process is carried out with maximum safety measures, and we use protective accessories.",
+      "icon": "fas fa-hard-hat"
+    }
+  },
+  "home_info": {
     "title": "Welder",
+    "description": "A company with 11 years of experience in professional metal welding projects.",
+    "button": "Projects"
+  },
+  "home_info_second_section": {
+    "title": "Projects",
+    "description": "Welder takes full responsibility for projects of any scale"
+  },
+  "footer": {
+    "pages": "Pages",
     "home": "Home",
     "about": "About Us",
     "projects": "Projects",
-    "company_projects": "Company Projects",
-    "individual_projects": "Individual Projects",
     "contact": "Contact",
-    "select_language": "Select Language"
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "aboutPage": {
+    "header": {
+      "title": "Welder Group",
+      "subtitle": "Strong connection, constant reliability!"
+    }
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "name": "Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send Message"
   }
-  
+}

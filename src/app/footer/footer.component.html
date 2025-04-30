@@ -1,27 +1,26 @@
 <div class="welder-website-main-footer-container">
   <div class="footer-container">
     <div class="footer-box">
-      <h2>გვერდები</h2>
+      <h2>{{ 'footer.pages' | translate }}</h2>
       <ul>
-        <li><a routerLink="/home" href="">მთავარი</a></li>
-        <li><a routerLink="/about" href="">ჩვენ შესახებ</a></li>
-        <li><a routerLink="/projects" href="">პროექტები</a></li>
-        <li><a routerLink="/contact" href="">კონტაქტი</a></li>
+        <li><a routerLink="/home">{{ 'footer.home' | translate }}</a></li>
+        <li><a routerLink="/about">{{ 'footer.about' | translate }}</a></li>
+        <li><a routerLink="/projects">{{ 'footer.projects' | translate }}</a></li>
+        <li><a routerLink="/contact">{{ 'footer.contact' | translate }}</a></li>
       </ul>
     </div>
     <div class="footer-box">
-      <h2>კონტაქტი</h2>
+      <h2>{{ 'footer.contact' | translate }}</h2>
       <ul>
         <li>
-          <a href=""
-            ><i class="bi bi-telephone-fill"></i> ნომერი: +995-000-000</a
-          >
+          <a href="#">
+            <i class="bi bi-telephone-fill"></i> {{ 'footer.phone' | translate }}: +995-000-000
+          </a>
         </li>
         <li>
-          <a href=""
-            ><i class="bi bi-envelope-fill"></i> მეილი:
-            info.weldergroup&#64;gmail.com</a
-          >
+          <a href="#">
+            <i class="bi bi-envelope-fill"></i> {{ 'footer.email' | translate }}: info.weldergroup&#64;gmail.com
+          </a>
         </li>
       </ul>
     </div>

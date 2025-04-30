@@ -1,5 +1,5 @@
 <div class="big-projects-main-container">
-  <h1>კომპანიებთან განხორციელებული პროექტები</h1>
+  <h1>{{ 'big_projects.heading' | translate }}</h1>
   <div class="projects">
     <div class="project-card" *ngFor="let project of projects" [routerLink]="['/project', project.id]">
       <img [src]="project.imageUrl" alt="{{ project.companyName }}">
