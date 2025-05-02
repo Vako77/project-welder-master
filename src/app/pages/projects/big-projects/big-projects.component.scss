@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
-
+ 
 .big-projects-main-container h1 {
   font-size: 3rem;
   color: #001f3f;
@@ -12,13 +12,13 @@
   margin-bottom: 40px;
   margin-top: 40px;
 }
-
+ 
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* default: 3 სვეტი */
   gap: 20px;
 }
-
+ 
 /* === Individual Project Card === */
 .project-card {
   width: 100%;
@@ -31,12 +31,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-
+ 
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
-
+ 
 .project-card img {
   width: 100%;
   height: 400px; /* ფიქსირებული სიმაღლე ქარდში */
@@ -45,11 +45,11 @@
   transition: transform 0.3s ease;
   border-radius: 7px;
 }
-
+ 
 .project-card:hover img {
   transform: scale(1.05);
 }
-
+ 
 /* === Overlay === */
 .overlay {
   position: absolute;
@@ -63,7 +63,7 @@
   z-index: 2;
   pointer-events: none;
 }
-
+ 
 .company-name {
   position: absolute;
   bottom: 20px;
@@ -79,35 +79,77 @@
   backdrop-filter: blur(4px); /* მოდერნული ეფექტი */
   transition: all 0.3s ease;
 }
-
+ 
+ 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+ 
+  span {
+    margin-top: 12px;
+  }
+ 
+  button {
+    padding: 12px 20px;
+    background: linear-gradient(145deg, #0056b3, #003d80);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+ 
+    &:hover:not(:disabled) {
+      background: linear-gradient(145deg, #004099, #003366);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    }
+ 
+    &:disabled {
+      background: #ccc;
+      color: #666;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+}
+ 
 /* === Responsive Control === */
-
+ 
 /* 💻 1024px-ზე ქვემოთ → 2 სვეტი */
 @media (max-width: 1280px) {
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
-
  
-
+ 
+ 
   .company-name {
     font-size: 18px;
     padding: 8px 14px;
   }
 }
-
+ 
 /* 📱 768px-ზე ქვემოთ → 1 სვეტი */
 @media (max-width: 768px) {
   .projects {
     grid-template-columns: 1fr;
   }
-
+ 
   .big-projects-main-container h1 {
     font-size: 2rem;
   }
-
+ 
   .company-name {
     font-size: 16px;
     padding: 6px 12px;
   }
 }
+ 
+ 
