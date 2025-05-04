@@ -1,65 +1,137 @@
+/* Main Footer Container */
 .welder-website-main-footer-container {
   background-color: #001f3f;
+  background-image: linear-gradient(135deg, #001f3f 0%, #003366 100%);
   min-height: 400px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
   height: auto;
+  position: relative;
+  overflow: hidden;
 }
+
 
 .footer-container {
   max-width: 1200px;
   width: 100%;
   display: flex;
-  gap: 150px;
-  margin-left: 5%;
-  padding: 20px;
+  gap: 80px;
+  padding: 40px 20px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-box {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  flex: 1;
+  min-width: 200px;
 }
+
 
 .footer-box h2 {
   color: #ffffff;
   font-size: 24px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-box h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 40px;
+  background: #00aced;
+  border-radius: 2px;
 }
 
 .footer-box ul {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-box ul li {
   list-style: none;
+  transition: transform 0.2s ease;
+}
+
+.footer-box ul li:hover {
+  transform: translateX(5px);
 }
 
 .footer-box ul li a {
   text-decoration: none;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.85);
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 16px;
 }
 
 .footer-box ul li a:hover {
   color: #00aced;
-  text-decoration: underline;
 }
 
-// დამატებითი სტილი სოციალური მედიისთვის
-.footer-box ul.socials li a i {
+.footer-box ul li a i {
   font-size: 18px;
+  color: #00aced;
 }
 
-// მობილურზე მოქნილი განლაგება
-@media screen and (max-width: 735px) {
+.footer-box ul.socials li a {
+  display: flex;
+  align-items: center;
+}
+
+.footer-box ul.socials li a i {
+  font-size: 20px;
+  width: 24px;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.footer-box ul.socials li a:hover i {
+  transform: scale(1.2);
+}
+
+
+
+@media screen and (max-width: 992px) {
+  .footer-container {
+    gap: 50px;
+    padding: 30px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  .footer-box {
+    min-width: 45%;
+  }
+}
+
+@media screen and (max-width: 576px) {
   .footer-container {
     flex-direction: column;
-    gap: 60px;
+    gap: 40px;
+    padding: 30px 20px;
+  }
+
+  .footer-box {
+    min-width: 100%;
   }
 }

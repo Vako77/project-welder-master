@@ -1,3 +1,4 @@
+/* Main Container Styles */
 .main-form-container {
   min-height: 100vh;
   display: flex;
@@ -5,25 +6,27 @@
   justify-content: center;
   padding: 40px 20px;
   box-sizing: border-box;
-  background: linear-gradient(to right, #f8f8f8, #f0f0f0);
+  background: linear-gradient(135deg, #f8f8f8, #f0f0f0);
 }
 
+/* Form Container */
 .form-container {
-  margin-top: 40px;
+  margin-top: 0;
   display: flex;
   max-width: 1100px;
   width: 100%;
-  min-height: 600px; /* ეს მნიშვნელოვანია height: 100%-ზე */
+  min-height: 600px;
   border-radius: 16px;
   overflow: hidden;
   background: #ffffff;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
+/* Map Container */
 .form-container-map {
   width: 50%;
   height: auto;
-  aspect-ratio: 1 / 1; /* მოერგება ავტომატურად */
+  aspect-ratio: 1 / 1;
   min-height: 500px;
   max-height: 100%;
 }
@@ -35,22 +38,7 @@
   display: block;
 }
 
-/* მარჯვენა მხარე — ფორმა */
-.form-container-inputs {
-  width: 50%;
-  padding: 50px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 16px;
-}
-
-.form-container-inputs h1 {
-  font-size: 2.5rem;
-  color: #001f3f;
-  margin-bottom: 20px;
-}
-
+/* Form Inputs Container */
 .form-container-inputs {
   width: 50%;
   padding: 50px 40px;
@@ -61,17 +49,43 @@
   box-sizing: border-box;
 }
 
+/* Form Header */
+.form-container-inputs h1 {
+  font-size: 2.5rem;
+  color: #001f3f;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.form-description {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0 0 15px 0;
+  line-height: 1.5;
+}
+
+/* Form Inputs */
 .form-container-inputs input,
+.form-container-inputs select,
 .form-container-inputs textarea {
   width: 100%;
   max-width: 100%;
   padding: 14px 16px;
-  border: 1px solid #001f3f;
-  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
   font-size: 1rem;
   outline: none;
   box-sizing: border-box;
   background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.form-container-inputs input:focus,
+.form-container-inputs select:focus,
+.form-container-inputs textarea:focus {
+  border-color: #0055a4;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 85, 164, 0.1);
 }
 
 .form-container-inputs textarea {
@@ -81,48 +95,92 @@
   overflow-y: auto;
 }
 
-.form-container-inputs button {
-  width: 50%;
-  padding: 14px;
+/* Form Footer */
+.form-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Submit Button */
+.form-footer button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: auto;
+  padding: 14px 28px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #0055a4;
   color: #fff;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.form-container-inputs button:hover {
+.form-footer button:hover {
   background: #003f7d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 63, 125, 0.2);
 }
 
-/* მობილური ვერსია — მეტი გასწორება */
+.form-footer button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-footer button i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.form-footer button:hover:not(:disabled) i {
+  transform: translateX(5px);
+}
+
+.privacy-note {
+  color: #999;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.error-message{
+  color: red;
+  margin-left: 5px;
+}
+
+/* Responsive Styles */
 @media (max-width: 868px) {
   .form-container {
     flex-direction: column;
   }
+  
   .form-container-map {
     display: none;
   }
+  
   .form-container-inputs {
     width: 100%;
-  }
-
-  .form-container-inputs {
     padding: 24px 16px;
     gap: 14px;
   }
-
+  
   .form-container-inputs h1 {
     font-size: 2rem;
     text-align: center;
   }
-
-  .form-container-inputs button {
+  
+  .form-description {
+    text-align: center;
+  }
+  
+  .form-footer button {
     width: 100%;
-    padding: 12px;
-    font-size: 1rem;
   }
 }

@@ -38,12 +38,8 @@
       <li>
         <a routerLink="/" (click)="closeMenu()">{{ "home" | translate }}</a>
       </li>
-      <li>
-        <a routerLink="/about" (click)="closeMenu()">{{ "about" | translate }}</a>
-      </li>
-
-      <!-- Dropdown Menu -->
-      <li class="dropdown">
+       <!-- Dropdown Menu -->
+       <li class="dropdown">
         <a class="dropdown-toggle" (click)="toggleDropdown($event)">{{ "projects" | translate }}</a>
         <ul class="dropdown-menu" [class.show]="showDropdown">
           <li>
@@ -58,7 +54,10 @@
           </li>
         </ul>
       </li>
-
+      
+      <li>
+        <a routerLink="/about" (click)="closeMenu()">{{ "about" | translate }}</a>
+      </li>
       <li>
         <a routerLink="/contact" (click)="closeMenu()">
           {{ "contact" | translate }}

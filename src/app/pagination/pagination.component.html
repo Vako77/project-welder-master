@@ -1,0 +1,44 @@
+<div class="pagination">
+    <button 
+      (click)="changePage(1)" 
+      [disabled]="currentPage === 1"
+      class="pagination-nav-btn"
+      aria-label="პირველი გვერდი">
+      <i class="bi bi-chevron-double-left"></i>
+    </button>
+    
+    <button 
+      (click)="changePage(currentPage - 1)" 
+      [disabled]="currentPage === 1"
+      class="pagination-nav-btn"
+      aria-label="წინა გვერდი">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    
+    <div class="pagination-numbers">
+      <button 
+        *ngFor="let page of getPaginationArray()" 
+        (click)="changePage(page)"
+        [class.active]="page === currentPage"
+        class="page-number-btn">
+        {{ page }}
+      </button>
+    </div>
+    
+    <button 
+      (click)="changePage(currentPage + 1)" 
+      [disabled]="currentPage === totalPages"
+      class="pagination-nav-btn"
+      aria-label="შემდეგი გვერდი">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+    
+    <button 
+      (click)="changePage(totalPages)" 
+      [disabled]="currentPage === totalPages"
+      class="pagination-nav-btn"
+      aria-label="ბოლო გვერდი">
+      <i class="bi bi-chevron-double-right"></i>
+    </button>
+  </div>
+  

@@ -1,3 +1,4 @@
+// ============ ძირითადი კონტეინერი ============
 .gallery-container {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   max-width: 1600px;
@@ -6,163 +7,447 @@
   color: #333;
 
   h2 {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     color: #222;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #0056b3, #00c6ff);
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
   }
 }
 
+// ============ პროექტების გრიდი ============
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 24px;
+  gap: 30px;
 }
 
 .project-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 16px;
   background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+    .hover-overlay {
+      opacity: 1;
+    }
   }
 
-  .thumbnail {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 12px;
+  .card-image-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    .thumbnail {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .hover-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 86, 179, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+
+      .view-project {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 12px 24px;
+        border: 2px solid white;
+        border-radius: 30px;
+        transform: translateY(20px);
+        transition: transform 0.4s ease;
+      }
+    }
+
+    &:hover {
+      .thumbnail {
+        transform: scale(1.05);
+      }
+
+      .hover-overlay .view-project {
+        transform: translateY(0);
+      }
+    }
   }
 
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin: 20px 25px 10px;
     color: #222;
   }
 
   p {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.4;
-  }
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-top: 30px;
-
-  span {
-    margin-top: 12px;
-  }
-
-  button {
-    padding: 12px 20px;
-    background: linear-gradient(145deg, #0056b3, #003d80);
-    color: white;
     font-size: 1rem;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-
-    &:hover:not(:disabled) {
-      background: linear-gradient(145deg, #004099, #003366);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    &:disabled {
-      background: #ccc;
-      color: #666;
-      cursor: not-allowed;
-      box-shadow: none;
-    }
+    color: #666;
+    line-height: 1.5;
+    margin: 0 25px 25px;
   }
 }
 
-.modal-overlay {
+// ============ მოდალის სტილები ============
+.modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 .modal-content {
   background: #fff;
-  padding: 24px;
   border-radius: 12px;
-  max-width: 850px;
-  width: 90%;
-  max-height: 90vh;
+  max-width: 1050px;
+  width: 92%;
+  max-height: 92vh;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
   position: relative;
-  overflow-y: auto;
+}
 
-  img {
-    max-width: 100%;
-    max-height: 70vh;
-    display: block;
-    margin: 0 auto;
-    border-radius: 8px;
-  }
+.modal-header {
+  padding: 30px 40px 20px;
+  border-bottom: 1px solid #eee;
+}
 
-  .close-btn {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: #333;
-    cursor: pointer;
-    transition: color 0.2s;
+.modal-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
 
-    &:hover {
-      color: #ffffff;
-      background-color: #001f3f;
-    }
-  }
+.modal-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
 
-  .modal-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    margin-top: 20px;
+// ============ სლაიდერი ============
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 30px;
+  width: 100%;
 
-    span {
-      margin-top: 13px;
-    }
+  .image-showcase {
+    height: 520px;
+    background-color: #f5f5f5;
+    position: relative;
 
-    button {
-      padding: 8px 14px;
-      background: #004099;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 300ms;
-      color: #ffffff;
+    .image-container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      &:hover {
-        transform: scale(1.05);
+      .featured-image {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        transition: opacity 0.3s ease;
       }
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #001f3f;
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 5;
+
+      &.prev {
+        left: 20px;
+      }
+
+      &.next {
+        right: 20px;
+      }
+
+      &:disabled {
+        background-color: #e0e0e0;
+        cursor: not-allowed;
+        opacity: 0.5;
+
+        svg {
+          fill: #999;
+        }
+      }
+    }
+  }
+
+  .carousel-controls {
+    padding: 25px 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .image-counter {
+      margin-bottom: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+
+      .current-index {
+        font-size: 1.8rem;
+        color: #0056b3;
+      }
+
+      .total-divider {
+        margin: 0 5px;
+        font-size: 1.4rem;
+        color: #ccc;
+      }
+
+      .total-images {
+        font-size: 1.4rem;
+        color: #777;
+      }
+    }
+
+    .thumbnails-gallery {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 5px 2px 15px;
+      scrollbar-width: thin;
+      scrollbar-color: #0056b3 #f1f1f1;
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #0056b3;
+        border-radius: 10px;
+      }
+
+      .thumbnail-item {
+        flex: 0 0 auto;
+        width: 120px;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-3px);
+        }
+
+        &.active {
+          .thumbnail-frame {
+            border-color: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+            &::after {
+              opacity: 0;
+            }
+          }
+        }
+
+        .thumbnail-frame {
+          height: 90px;
+          border: 3px solid transparent;
+          border-radius: 10px;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            opacity: 1;
+            transition: opacity 0.3s ease;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ============ დახურვის ღილაკი ============
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #001f3f;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #fff;
+
+    i {
+      color: #000;
+    }
+  }
+}
+
+// ============ რესპონსიულობა ============
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  .image-showcase {
+    height: 450px;
+  }
+
+  .modal-title {
+    font-size: 1.8rem;
+  }
+
+  .carousel-controls {
+    padding: 20px 30px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .project-card .card-image-wrapper .thumbnail {
+    height: 380px;
+  }
+
+  .image-showcase {
+    height: 380px;
+
+    .nav-button {
+      width: 40px;
+      height: 40px;
+
+      &.prev {
+        left: 10px;
+      }
+
+      &.next {
+        right: 10px;
+      }
+    }
+  }
+
+  .modal-title {
+    font-size: 1.6rem;
+  }
+
+  .modal-description {
+    font-size: 1rem;
+  }
+
+  .carousel-controls {
+    padding: 15px 25px 0;
+  }
+
+  .thumbnails-gallery .thumbnail-item {
+    width: 100px;
+
+    .thumbnail-frame {
+      height: 75px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card .card-image-wrapper .thumbnail {
+    height: 320px;
+  }
+
+  .image-showcase {
+    height: 320px;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+
+  .modal-description {
+    font-size: 0.95rem;
+  }
+
+  .carousel-controls {
+    padding: 15px 20px 0;
+  }
+
+  .image-counter .current-index {
+    font-size: 1.6rem;
+  }
+
+  .thumbnails-gallery .thumbnail-item {
+    width: 85px;
+
+    .thumbnail-frame {
+      height: 65px;
     }
   }
 }

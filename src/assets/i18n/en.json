@@ -47,7 +47,8 @@
     "socials": "Social Media",
     "facebook": "Facebook",
     "instagram": "Instagram",
-    "tiktok": "TikTok"
+    "tiktok": "TikTok",
+    "address": "Address:Tbilisi, Georgia"
   },
   "aboutPage": {
     "header": {
@@ -57,10 +58,29 @@
   },
   "contactPage": {
     "title": "Contact Us",
-    "name": "Name",
-    "lastName": "Last Name",
-    "email": "Email",
-    "message": "Message",
-    "submit": "Send Message"
+    "description": "Please fill out the form and we will contact you as soon as possible.",
+    "findUs": "Find us here",
+    "address": "Tbilisi, Georgia",
+    "namePlaceholder": "Your first name",
+    "lastNamePlaceholder": "Your last name",
+    "emailPlaceholder": "Your email",
+    "subject": "Subject",
+    "selectSubject": "Select subject",
+    "general": "General question",
+    "project": "Project proposal",
+    "partnership": "Partnership",
+    "support": "Technical support",
+    "messagePlaceholder": "Your message...",
+    "privacy": "Your data is protected and will not be shared with third parties",
+    "success": "Success!",
+    "successMessage": "Your message has been successfully sent",
+    "error": "Error!",
+    "formError": "Please fill out all required fields",
+    "errorMessage": "Failed to send the message. Please try again later",
+    "minLength": "Minimum length is {{length}} characters",
+    "invalidEmail": "Please enter a valid email address",
+    "requiredField": "This field is required",
+    "sending": "Sending...",
+    "submit": "Submit"
   }
 }

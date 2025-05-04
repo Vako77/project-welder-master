@@ -1,44 +1,91 @@
 <div class="project-detail-container">
-  <!-- Main Image Section -->
-  <div class="main-images-container">
+  <!-- Header Section -->
+  <div class="project-header">
+    <h2 class="project-title">{{ projectDetails.companyName }}</h2>
+    <div class="project-meta">
+      <span class="project-location">
+        <i class="fa fa-map-marker"></i> {{ projectDetails.location }}
+      </span>
+      <span class="project-date">
+        <i class="fa fa-calendar"></i> {{ projectDetails.year }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <div class="main-images-container" [class.mobile]="isMobile">
     <!-- Active Image -->
     <div class="active-image" (click)="setActiveImage(activeImage)">
-      <img 
-        [src]="activeImage" 
-        alt="Active Image" 
-        class="active-image-main" 
-      />
+      <img [src]="activeImage" [alt]="projectDetails.companyName" class="active-image-main" />
+      <div class="image-overlay">
+        <span class="zoom-icon">
+          <i class="fa fa-search-plus"></i>
+        </span>
+      </div>
     </div>
 
-    <!-- Thumbnail Gallery -->
-    <div class="image-gallery">
-      <div class="images">
-        <img
-          *ngFor="let image of projectDetails.images"
-          [src]="image"
-          alt="{{ projectDetails.companyName }}"
-          (click)="setActiveImage(image)"
-          class="image-thumb"
-        />
+    <!-- Image Thumbnails - Simple scrollable version -->
+    <div class="image-gallery" [class.mobile]="isMobile">
+      <!-- Thumbnails Container -->
+      <div class="images" #thumbnailContainer [class.mobile]="isMobile">
+        <img *ngFor="let image of projectDetails.images; let i = index" [src]="image"
+          [alt]="projectDetails.companyName + ' image ' + (i+1)" (click)="setActiveImage(image)"
+          [class.active]="image === activeImage" class="image-thumb" loading="lazy" />
       </div>
     </div>
   </div>
 
-  <!-- Project Description Section -->
+  <!-- Project Details Section -->
   <div class="project-details">
-    <h3>{{ 'project_detail.heading' | translate }}</h3>
-    <p>{{ 'project_detail.description' | translate }}</p>
+    <!-- Project Description -->
+    <div class="project-description">
+      <p>{{ projectDetails.description }}</p>
+    </div>
+
+    <!-- Basic Project Info -->
+    <div class="project-specs">
+      <div class="specs-grid">
+        <div class="spec-item">
+          <span class="spec-label">ფართობი</span>
+          <span class="spec-value">{{ projectDetails.area }}</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">სამუშაო ვადა</span>
+          <span class="spec-value">{{ projectDetails.date }}</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">დასრულების წელი</span>
+          <span class="spec-value">{{ projectDetails.completionYear }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- Fullscreen Modal Carousel -->
-<div class="modal" *ngIf="isModalOpen">
-  <span class="close" (click)="closeModal()">×</span>
-  <img 
-    [src]="activeImage" 
-    class="modal-content" 
-  />
+<div class="modal" *ngIf="isModalOpen" [@fadeAnimation]>
+  <span class="close" (click)="closeModal()">
+    <i class="fa fa-times"></i>
+  </span>
 
-  <button class="prev" (click)="prevImage()">&#10094;</button>
-  <button class="next" (click)="nextImage()">&#10095;</button>
+  <img [src]="activeImage" class="modal-content" alt="Enlarged view" (swipeleft)="nextImage()"
+    (swiperight)="prevImage()" />
+
+  <button class="prev" (click)="prevImage()" [disabled]="projectDetails.images?.length <= 1">
+    <i class="fa fa-chevron-left"></i>
+  </button>
+
+  <button class="next" (click)="nextImage()" [disabled]="projectDetails.images?.length <= 1">
+    <i class="fa fa-chevron-right"></i>
+  </button>
+
+  <!-- Image Counter/Pagination -->
+  <div class="image-counter" *ngIf="projectDetails.images?.length > 1">
+    <span>{{ currentImageIndex + 1 }} / {{ projectDetails.images?.length }}</span>
+    <div class="counter-dots">
+      <span *ngFor="let image of projectDetails.images; let i = index" class="counter-dot"
+        [class.active]="i === currentImageIndex" (click)="setModalImage(i)">
+      </span>
+    </div>
+  </div>
 </div>

@@ -1,17 +1,16 @@
 <div class="welder-website-main-footer-container">
   <div class="footer-container">
-    
     <!-- Pages Section -->
     <div class="footer-box">
       <h2>{{ 'footer.pages' | translate }}</h2>
       <ul>
-        <li><a routerLink="/home">{{ 'footer.home' | translate }}</a></li>
-        <li><a routerLink="/about">{{ 'footer.about' | translate }}</a></li>
-        <li><a routerLink="/projects/big-projects">{{ 'footer.projects' | translate }}</a></li>
-        <li><a routerLink="/contact">{{ 'footer.contact' | translate }}</a></li>
+        <li><a routerLink="/home"><i class="bi bi-house"></i>{{ 'footer.home' | translate }}</a></li>
+        <li><a routerLink="/about"><i class="bi bi-info-circle"></i>{{ 'footer.about' | translate }}</a></li>
+        <li><a routerLink="/projects/big-projects"><i class="bi bi-folder"></i>{{ 'footer.projects' | translate }}</a></li>
+        <li><a routerLink="/contact"><i class="bi bi-envelope"></i>{{ 'footer.contact' | translate }}</a></li>
       </ul>
     </div>
-
+    
     <!-- Contact Section -->
     <div class="footer-box">
       <h2>{{ 'footer.contact' | translate }}</h2>
@@ -26,9 +25,14 @@
             <i class="bi bi-envelope-fill"></i> {{ 'footer.email' | translate }}: info.weldergroup&#64;gmail.com
           </a>
         </li>
+        <li>
+          <a href="https://maps.google.com" target="_blank">
+            <i class="bi bi-geo-alt-fill"></i> {{ 'footer.address' | translate }}
+          </a>
+        </li>
       </ul>
     </div>
-
+    
     <!-- Social Media Section -->
     <div class="footer-box">
       <h2>{{ 'footer.socials' | translate }}</h2>
@@ -50,6 +54,5 @@
         </li>
       </ul>
     </div>
-
   </div>
 </div>
