@@ -24,9 +24,9 @@ export class CardSectionComponent implements AfterViewInit {
   // ];
 
   skills = [
-    { title: 'equipment', icon: 'fas fa-tools' },
-    { title: 'clean_welding', icon: 'fas fa-wrench' },
-    { title: 'safety', icon: 'fas fa-hard-hat' },
+    { title: 'equipment', icon: 'fa-solid fa-people-group' },
+    { title: 'clean_welding', icon: 'fa-solid fa-clock' },
+    { title: 'safety', icon: 'bi bi-shield-check' },
   ];
 
   constructor() {}

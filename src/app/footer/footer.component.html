@@ -1,28 +1,55 @@
 <div class="welder-website-main-footer-container">
   <div class="footer-container">
+    
+    <!-- Pages Section -->
     <div class="footer-box">
       <h2>{{ 'footer.pages' | translate }}</h2>
       <ul>
         <li><a routerLink="/home">{{ 'footer.home' | translate }}</a></li>
         <li><a routerLink="/about">{{ 'footer.about' | translate }}</a></li>
-        <li><a routerLink="/projects">{{ 'footer.projects' | translate }}</a></li>
+        <li><a routerLink="/projects/big-projects">{{ 'footer.projects' | translate }}</a></li>
         <li><a routerLink="/contact">{{ 'footer.contact' | translate }}</a></li>
       </ul>
     </div>
+
+    <!-- Contact Section -->
     <div class="footer-box">
       <h2>{{ 'footer.contact' | translate }}</h2>
       <ul>
         <li>
-          <a href="#">
-            <i class="bi bi-telephone-fill"></i> {{ 'footer.phone' | translate }}: +995-000-000
+          <a href="tel:+995592052052">
+            <i class="bi bi-telephone-fill"></i> {{ 'footer.phone' | translate }}: +995-592-052-052
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="mailto:info.weldergroup@gmail.com">
             <i class="bi bi-envelope-fill"></i> {{ 'footer.email' | translate }}: info.weldergroup&#64;gmail.com
           </a>
         </li>
       </ul>
     </div>
+
+    <!-- Social Media Section -->
+    <div class="footer-box">
+      <h2>{{ 'footer.socials' | translate }}</h2>
+      <ul class="socials">
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=61575412313131" target="_blank" rel="noopener">
+            <i class="bi bi-facebook"></i> Facebook
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/weldergroup0/?igsh=ZmE2aHd2c24zNTM%3D#" target="_blank" rel="noopener">
+            <i class="bi bi-instagram"></i> Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@dysmentality?_t=ZS-8w4KuUqnJNy&_r=1" target="_blank" rel="noopener">
+            <i class="bi bi-tiktok"></i> TikTok
+          </a>
+        </li>
+      </ul>
+    </div>
+
   </div>
 </div>

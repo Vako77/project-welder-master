@@ -1,5 +1,4 @@
 {
-  "title": "Welder",
   "home": "Home",
   "about": "About Us",
   "projects": "Projects",
@@ -16,23 +15,20 @@
   },
   "skills": {
     "equipment": {
-      "title": "Equipment",
-      "description": "We use professional-grade tools",
-      "icon": "fas fa-tools"
+      "title": "Team",
+      "description": "Our young, energetic, and creative team provides a service that is fully tailored to the needs and demands of our clients. Our qualified welders ensure clean and durable welding that meets all technical standards"
     },
     "clean_welding": {
-      "title": "Clean Welding",
-      "description": "Our specialists ensure detailed and clean welding",
-      "icon": "fas fa-wrench"
+      "title": "Time Management",
+      "description": "Time is our top priority. Our company guarantees that all work will be completed within the agreed timeframe to ensure your comfort and satisfaction"
     },
     "safety": {
       "title": "Safety",
-      "description": "The welding process is carried out with maximum safety measures, and we use protective accessories.",
-      "icon": "fas fa-hard-hat"
+      "description": "Safety is our priority — we operate in compliance with standards to protect both our team members and the construction site"
     }
   },
   "home_info": {
-    "title": "Welder",
+    "title": "WelderGroup",
     "description": "A company with 11 years of experience in professional metal welding projects.",
     "button": "Projects"
   },
@@ -47,7 +43,11 @@
     "projects": "Projects",
     "contact": "Contact",
     "phone": "Phone",
-    "email": "Email"
+    "email": "Email",
+    "socials": "Social Media",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "tiktok": "TikTok"
   },
   "aboutPage": {
     "header": {

@@ -1,109 +1,113 @@
 .main-home-information-second-section-container {
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 60px 5%; /* ზევით/ქვემოთ padding-ით გავზარდოთ სიმაღლე */
-    position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 60px 5%; /* ზევით/ქვემოთ padding-ით გავზარდოთ სიმაღლე */
+  position: relative;
 }
 
 .main-home-information-second-section-container-box {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 10%;
-    padding: 40px 0;
-    transform: translateY(50px);
-    opacity: 0;
-    transition: all 1s ease-in-out;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10%;
+  padding: 40px 0;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 
 .main-home-information-second-section-text {
-    flex: 1;
-    max-width: 500px;
-    color: #333;
-    transform: translateX(50px);
-    opacity: 0;
-    transition: all 1s ease-in-out 0.5s;
+  flex: 1;
+  max-width: 500px;
+  color: #333;
+  transform: translateX(50px);
+  opacity: 0;
+  transition: all 1s ease-in-out 0.5s;
 }
 
 .main-home-information-second-section-text h1 {
-    font-size: 5rem;
-    color: #001F3F;
-    margin-bottom: 25px;
-    position: relative;
+  font-size: 5rem;
+  color: #001f3f;
+  margin-bottom: 25px;
+  position: relative;
 }
 
 .main-home-information-second-section-text h1::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 60px;
-    height: 4px;
-    background-color: #001F3F;
-    border-radius: 2px;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 4px;
+  background-color: #001f3f;
+  border-radius: 2px;
 }
 
-
 .main-home-information-second-section-text p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 .main-home-information-second-section-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(-50px);
-    opacity: 0;
-    max-width: 1000px;
-    transition: all 1s ease-in-out 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50px);
+  opacity: 0;
+  max-width: 1000px;
+  transition: all 1s ease-in-out 0.5s;
 }
 
 .main-home-information-second-section-image img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Animations on Scroll --- */
 .fadeInUp {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .slideInLeft {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .slideInRight {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
+@media screen and (max-width: 1273px) {
+  .main-home-information-second-section-text h1 {
+    font-size: 5rem;
+  }
+}
 
-@media screen and (max-width:1088px){
-    .main-home-information-second-section-container-box {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 50px;
-    }
+@media screen and (max-width: 1088px) {
+  .main-home-information-second-section-container-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .main-home-information-second-section-container {
-        padding: 40px 5%;
-        min-height: auto;
-    }
+  .main-home-information-second-section-container {
+    padding: 40px 5%;
+    min-height: auto;
+  }
 
-    .main-home-information-second-section-text h1 {
-        font-size: 3rem;
-    }
+  .main-home-information-second-section-text h1 {
+    font-size: 3rem;
+  }
 
-    .main-home-information-second-section-text p {
-        font-size: 1rem;
-    }
+  .main-home-information-second-section-text p {
+    font-size: 1rem;
+  }
 }

@@ -19,14 +19,11 @@
   margin-left: 5%;
 }
 
-.main-contact-navigation-box-logo .welder-logo {
-  font-size: 40px;
-  color: #001f3f;
-  cursor: pointer;
-  transition: color 0.3s ease;
+.main-contact-navigation-box-logo img {
+  width: 200px;
 }
 
-.main-contact-navigation-box-logo .welder-logo:hover {
+.main-contact-navigation-box-lofgo .welder-logo:hover {
   color: #0056b3;
 }
 
@@ -184,21 +181,6 @@
   display: flex;
   align-items: center;
   gap: 20px;
-
-  .social-icon {
-    font-size: 20px;
-    color: #001f3f;
-    transition: color 0.3s ease;
-    background-color: #001f3f;
-    color: #ffffff;
-    width: 30px;
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-    &:hover {
-      color: #1877f2; // Facebook blue
-    }
-  }
 }
 
 /* Dropdown menu */
@@ -238,7 +220,7 @@
   text-decoration: none;
   display: block;
   transition: all 0.2s ease;
-  border-left: 3px solid transparent;
+  border-left: 3px solid trafnsparent;
 }
 
 .dropdown-menu a:hover {
@@ -454,7 +436,7 @@
     border-left: none;
   }
 
-  .navbar-extras{
+  .navbar-extras {
     margin-top: 40px;
   }
 

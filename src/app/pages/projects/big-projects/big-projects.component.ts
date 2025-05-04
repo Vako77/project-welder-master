@@ -10,7 +10,7 @@ export class BigProjectsComponent implements OnInit {
   allProjects = [
     {
       id: 1,
-      companyName: 'In Office',
+      companyName: 'InOffice',
       imageUrl:
         'https://www.officerent.ge/wp-content/uploads/2019/05/1.-Inoffice_kostava_Kvernadze_Cover-min.jpg',
     },
@@ -50,7 +50,7 @@ export class BigProjectsComponent implements OnInit {
   projects: { id: number; companyName: string; imageUrl: string }[] = [];
 
   // პაგინაციის პარამეტრები
-  readonly projectsPerPage: number = 4;
+  readonly projectsPerPage: number = 20;
   currentPage: number = 1;
   totalPages: number = 1;
 

@@ -1,29 +1,34 @@
 <div class="big-projects-main-container">
-  <h1>{{ 'big_projects.heading' | translate }}</h1>
+  <h1>{{ "big_projects.heading" | translate }}</h1>
   <div class="projects">
-    <div class="project-card"
-         *ngFor="let project of projects; trackBy: trackByProjectId"
-         [routerLink]="['/project', project.id]">
-      <img [src]="project.imageUrl" alt="{{ project.companyName }}">
+    <div
+      class="project-card"
+      *ngFor="let project of projects; trackBy: trackByProjectId"
+      [routerLink]="['/project', project.id]"
+    >
+      <img [src]="project.imageUrl" alt="{{ project.companyName }}" />
       <div class="overlay">
         <p class="company-name">{{ project.companyName }}</p>
       </div>
     </div>
   </div>
- 
+
   <!-- პაგინაცია -->
   <div class="pagination" *ngIf="totalPages > 1">
-    <button (click)="changePage(currentPage - 1)"
-            [disabled]="currentPage === 1">
+    <button
+      (click)="changePage(currentPage - 1)"
+      [disabled]="currentPage === 1"
+    >
       წინა
     </button>
-   
+
     <span>გვერდი {{ currentPage }} / {{ totalPages }}</span>
-   
-    <button (click)="changePage(currentPage + 1)"
-            [disabled]="currentPage === totalPages">
+
+    <button
+      (click)="changePage(currentPage + 1)"
+      [disabled]="currentPage === totalPages"
+    >
       შემდეგი
     </button>
   </div>
 </div>
- 

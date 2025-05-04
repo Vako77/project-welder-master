@@ -13,7 +13,9 @@
   gap: 150px;
   margin-left: 5%;
   padding: 20px;
+  flex-wrap: wrap;
 }
+
 .footer-box {
   display: flex;
   flex-direction: column;
@@ -38,12 +40,23 @@
 .footer-box ul li a {
   text-decoration: none;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease;
 }
 
 .footer-box ul li a:hover {
+  color: #00aced;
   text-decoration: underline;
 }
 
+// დამატებითი სტილი სოციალური მედიისთვის
+.footer-box ul.socials li a i {
+  font-size: 18px;
+}
+
+// მობილურზე მოქნილი განლაგება
 @media screen and (max-width: 735px) {
   .footer-container {
     flex-direction: column;

@@ -83,6 +83,11 @@
   transform: translateX(0);
 }
 
+@media screen and (max-width: 1273px) {
+  .main-home-information-section-text h1 {
+    font-size: 5rem;
+  }
+}
 @media screen and (max-width: 1088px) {
   .main-home-information-section-container-box {
     flex-direction: column;
