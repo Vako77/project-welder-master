@@ -5,7 +5,7 @@
     <div class="main-contact-navigation-box-container">
       <!-- Logo -->
       <div class="main-contact-navigation-box-logo">
-          <img routerLink="/home" src="../../assets/images/bf35bae7-e888-430c-818d-96be73c507fd.jpg" alt="">
+        <img routerLink="/home" src="../../assets/images/bf35bae7-e888-430c-818d-96be73c507fd.jpg" alt="">
       </div>
 
       <!-- Contact Info -->
@@ -38,8 +38,8 @@
       <li>
         <a routerLink="/" (click)="closeMenu()">{{ "home" | translate }}</a>
       </li>
-       <!-- Dropdown Menu -->
-       <li class="dropdown">
+      <!-- Dropdown Menu -->
+      <li class="dropdown">
         <a class="dropdown-toggle" (click)="toggleDropdown($event)">{{ "projects" | translate }}</a>
         <ul class="dropdown-menu" [class.show]="showDropdown">
           <li>
@@ -54,7 +54,7 @@
           </li>
         </ul>
       </li>
-      
+
       <li>
         <a routerLink="/about" (click)="closeMenu()">{{ "about" | translate }}</a>
       </li>
