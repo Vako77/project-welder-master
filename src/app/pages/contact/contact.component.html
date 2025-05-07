@@ -4,88 +4,59 @@
     <div class="form-container-map">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1525.5160395781345!2d44.99862433919977!3d41.68414559707449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404410500d5e8515%3A0x8eaa54f406f5d6e9!2z4YOt4YOY4YOg4YOc4YOQ4YOu4YOj4YOa4YOY4YOhIOGDpeGDo-GDqeGDkCwg4YOX4YOR4YOY4YOa4YOY4YOh4YOY!5e0!3m2!1ska!2sge!4v1745492292167!5m2!1ska!2sge"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <!-- მარჯვენა მხარეს — კონტაქტის ფორმა -->
     <div class="form-container-inputs">
       <h1>{{ 'contactPage.title' | translate }}</h1>
       <p class="form-description">{{ 'contactPage.description' | translate }}</p>
-      
+
       <!-- გამოვიყენებ ტემპლეტ დრაივენ ფორმს ნაცვლად რეაქტივ ფორმისა -->
       <div class="input-field" [class.has-error]="firstName.length > 0 && firstName.length < 3">
-        <input 
-          type="text" 
-          [(ngModel)]="firstName" 
-          placeholder="{{ 'contactPage.namePlaceholder' | translate }}" 
-          #firstNameInput="ngModel"
-          required
-          minlength="3"
-        />
+        <input type="text" [(ngModel)]="firstName" placeholder="{{ 'contactPage.namePlaceholder' | translate }}"
+          #firstNameInput="ngModel" required minlength="3" />
         <div *ngIf="firstName.length > 0 && firstName.length < 3" class="error-message">
           {{ 'contactPage.minLength' | translate:{length:3} }}
         </div>
       </div>
-      
+
       <div class="input-field" [class.has-error]="lastName.length > 0 && lastName.length < 3">
-        <input 
-          type="text" 
-          [(ngModel)]="lastName" 
-          placeholder="{{ 'contactPage.lastNamePlaceholder' | translate }}" 
-          #lastNameInput="ngModel"
-          required
-          minlength="3"
-        />
+        <input type="text" [(ngModel)]="lastName" placeholder="{{ 'contactPage.lastNamePlaceholder' | translate }}"
+          #lastNameInput="ngModel" required minlength="3" />
         <div *ngIf="lastName.length > 0 && lastName.length < 3" class="error-message">
           {{ 'contactPage.minLength' | translate:{length:3} }}
         </div>
       </div>
-      
+
       <div class="input-field" [class.has-error]="email.length > 0 && !isValidEmail(email)">
-        <input 
-          type="email" 
-          [(ngModel)]="email" 
-          placeholder="{{ 'contactPage.emailPlaceholder' | translate }}" 
-          #emailInput="ngModel"
-          required
-        />
+        <input type="email" [(ngModel)]="email" placeholder="{{ 'contactPage.emailPlaceholder' | translate }}"
+          #emailInput="ngModel" required />
         <div *ngIf="email.length > 0 && !isValidEmail(email)" class="error-message">
           {{ 'contactPage.invalidEmail' | translate }}
         </div>
       </div>
-      
+
       <div class="input-field" [class.has-error]="subject === ''">
         <select [(ngModel)]="subject" #subjectInput="ngModel" required>
           <option value="" disabled selected>{{ 'contactPage.selectSubject' | translate }}</option>
-          <option value="general">{{ 'contactPage.general' | translate }}</option>
           <option value="project">{{ 'contactPage.project' | translate }}</option>
           <option value="partnership">{{ 'contactPage.partnership' | translate }}</option>
-          <option value="support">{{ 'contactPage.support' | translate }}</option>
         </select>
         <div *ngIf="subject === ''" class="error-message">
           {{ 'contactPage.requiredField' | translate }}
         </div>
       </div>
-      
+
       <div class="input-field" [class.has-error]="message.length > 0 && message.length < 10">
-        <textarea 
-          [(ngModel)]="message" 
-          placeholder="{{ 'contactPage.messagePlaceholder' | translate }}"
-          #messageInput="ngModel"
-          required
-          minlength="10"
-        ></textarea>
+        <textarea [(ngModel)]="message" placeholder="{{ 'contactPage.messagePlaceholder' | translate }}"
+          #messageInput="ngModel" required minlength="10"></textarea>
         <div *ngIf="message.length > 0 && message.length < 10" class="error-message">
           {{ 'contactPage.minLength' | translate:{length:10} }}
         </div>
       </div>
-      
+
       <div class="form-footer">
         <button (click)="submitForm()" [disabled]="isSubmitting || !isFormValid()">
           <span>{{ isSubmitting ? ('contactPage.sending' | translate) : ('contactPage.submit' | translate) }}</span>

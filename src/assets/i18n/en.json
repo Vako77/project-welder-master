@@ -54,8 +54,14 @@
     "header": {
       "title": "Welder Group",
       "subtitle": "Strong connection, constant reliability!"
+    },
+    "content": {
+      "1": "Welder Group is a reliable partner in the field of welding, with 11 years of experience and high professionalism.",
+      "2": "We offer the production of all types of metal structures with the highest quality and precision — whether for small objects or large-scale construction projects.",
+      "3": "Our team consists of certified welders who adhere to the highest standards and safety norms, making the work on construction sites more comfortable and organized for clients.",
+      "4": "Our core values are quality, respect for the client’s time, and responsibility — that’s why each project is completed within the agreed timeframe and with maximum accuracy."
     }
-  },
+  },  
   "contactPage": {
     "title": "Contact Us",
     "description": "Please fill out the form and we will contact you as soon as possible.",
